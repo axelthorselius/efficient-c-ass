@@ -9,14 +9,21 @@ int main()
 {
 	int i = 0;
 	int c;
+	int n;
 
 	while(1)
 	{
 		// i = 0;
-		int c = getchar();
-		if (isdigit(c))
+		c = getchar();
+		if(isdigit(c))
 		{
-			stack[i] = c - '0';
+			n = 0;
+			while(isdigit(c))
+			{
+				stack[i] = n * 10 + c - '0';
+				c = getchar();
+				n++;
+			}
 			i++;
 		}
 		if(c == '+')
